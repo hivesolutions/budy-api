@@ -39,5 +39,19 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 import appier
 
-class Api(appier.Api):
-    pass
+from . import product
+
+BASE_URL = "http://localhost:8080/api/"
+""" The default base url to be used when no other
+base url value is provided to the constructor """
+
+class Api(
+    appier.Api,
+    product.ProductApi
+):
+
+    def __init__(self, *args, **kwargs):
+        appier.Api.__init__(self, *args, **kwargs)
+        self.base_url = appier.conf("BUDY_BASE_URL", BASE_URL)
+        self.base_url = kwargs.get("base_url", self.base_url)
+        self.base_url = kwargs.get("base_url", BASE_URL)
