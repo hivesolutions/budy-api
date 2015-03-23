@@ -19,6 +19,9 @@
 # You should have received a copy of the GNU General Public License
 # along with Hive Budy API. If not, see <http://www.gnu.org/licenses/>.
 
+__author__ = "João Magalhães <joamag@hive.pt>"
+""" The author(s) of the module """
+
 __version__ = "1.0.0"
 """ The version of the module """
 
@@ -34,8 +37,12 @@ __copyright__ = "Copyright (c) 2008-2015 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
-from . import base
-from . import product
+class ProductApi(object):
 
-from .base import Api
-from .product import ProductApi
+    def list_products(self, *args, **kwargs):
+        url = self.base_url + "products"
+        contents = self.get(
+            url,
+            **kwargs
+        )
+        return contents
