@@ -54,4 +54,3 @@ class Api(
         appier.Api.__init__(self, *args, **kwargs)
         self.base_url = appier.conf("BUDY_BASE_URL", BASE_URL)
         self.base_url = kwargs.get("base_url", self.base_url)
-        self.base_url = kwargs.get("base_url", BASE_URL)
