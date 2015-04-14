@@ -37,26 +37,9 @@ __copyright__ = "Copyright (c) 2008-2015 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
-import appier
+class SubscriptionApi(object):
 
-from . import color
-from . import product
-from . import category
-from . import subscription
-
-BASE_URL = "http://localhost:8080/api/"
-""" The default base url to be used when no other
-base url value is provided to the constructor """
-
-class Api(
-    appier.Api,
-    color.ColorApi,
-    product.ProductApi,
-    category.CategoryApi,
-    subscription.SubscriptionApi
-):
-
-    def __init__(self, *args, **kwargs):
-        appier.Api.__init__(self, *args, **kwargs)
-        self.base_url = appier.conf("BUDY_BASE_URL", BASE_URL)
-        self.base_url = kwargs.get("base_url", self.base_url)
+    def create_subscription(self, payload):
+        url = self.base_url + "subscriptions"
+        contents = self.post(url, data_j = payload)
+        return contents
