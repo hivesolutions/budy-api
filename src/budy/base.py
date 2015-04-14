@@ -40,6 +40,7 @@ __license__ = "GNU General Public License (GPL), Version 3"
 import appier
 
 from . import product
+from . import category
 
 BASE_URL = "http://localhost:8080/api/"
 """ The default base url to be used when no other
@@ -47,7 +48,8 @@ base url value is provided to the constructor """
 
 class Api(
     appier.Api,
-    product.ProductApi
+    product.ProductApi,
+    category.CategoryApi
 ):
 
     def __init__(self, *args, **kwargs):
