@@ -39,7 +39,7 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 class ColorApi(object):
 
-    def list_categories(self, *args, **kwargs):
+    def list_colors(self, *args, **kwargs):
         url = self.base_url + "colors"
         contents = self.get(
             url,
