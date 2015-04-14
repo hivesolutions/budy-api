@@ -39,6 +39,7 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 import appier
 
+from . import color
 from . import product
 from . import category
 
@@ -48,6 +49,7 @@ base url value is provided to the constructor """
 
 class Api(
     appier.Api,
+    color.ColorApi,
     product.ProductApi,
     category.CategoryApi
 ):
