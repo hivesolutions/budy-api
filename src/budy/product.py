@@ -47,7 +47,7 @@ class ProductApi(object):
         )
         return contents
 
-    def show_product(self, id):
+    def get_product(self, id):
         url = self.base_url + "products/%d" % id
         contents = self.get(url)
         return contents
