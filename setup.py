@@ -45,7 +45,7 @@ setuptools.setup(
     version = "0.1.6",
     author = "Hive Solutions Lda.",
     author_email = "development@hive.pt",
-    description = "Budy API",
+    description = "Budy API Client",
     license = "Apache License, Version 2.0",
     keywords = "budy api",
     url = "http://budy_api.hive.pt",
