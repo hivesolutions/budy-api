@@ -51,8 +51,10 @@ setuptools.setup(
     url = "http://budy_api.hive.pt",
     zip_safe = False,
     packages = [
-        "budy"
+        "budy",
+        "budy.test"
     ],
+    test_suite = "budy.test",
     package_dir = {
         "" : os.path.normpath("src")
     },
