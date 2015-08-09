@@ -1,0 +1,26 @@
+sudo: false
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+  - "3.4"
+  - "3.5-dev"
+  - "pypy"
+  - "pypy3"
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls
+  - pip install twine
+script: coverage run --source=budy_api setup.py test
+after_success: coveralls
+deploy:
+  provider: pypi
+  user: joamag
+  password:
+    secure: XEtINNbTLBwP84F8oIL9U0F1qmCcImE/ZGVTls8A2MWHuvD3Vvgkxf72jbe7waz+6Fwxr5uda9MtfGv+6YTrLgjOlqVyc1QZP7+0xmIFDvKHLeSPQBt7twsXzjfT1bQ1szvr+LQNylhAMsA/60HqE8YTP97cF01ohTFJEFbngsc=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    python: "2.7"
