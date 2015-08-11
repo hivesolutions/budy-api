@@ -8,6 +8,6 @@ Budy API is currently licensed under the [Apache License, Version 2.0](http://ww
 
 ## Build Automation
 
-[![Build Status](https://travis-ci.org/hivesolutions/budy_api.png?branch=master)](https://travis-ci.org/hivesolutions/budy_api)
-[![Coverage Status](https://coveralls.io/repos/hivesolutions/budy_api/badge.png?branch=master)](https://coveralls.io/r/hivesolutions/budy_api?branch=master)
-[![PyPi Status](https://img.shields.io/pypi/v/budy_api.png)](https://pypi.python.org/pypi/budy_api)
+[![Build Status](https://travis-ci.org/hivesolutions/budy_api.svg?branch=master)](https://travis-ci.org/hivesolutions/budy_api)
+[![Coverage Status](https://coveralls.io/repos/hivesolutions/budy_api/badge.svg?branch=master)](https://coveralls.io/r/hivesolutions/budy_api?branch=master)
+[![PyPi Status](https://img.shields.io/pypi/v/budy_api.svg)](https://pypi.python.org/pypi/budy_api)
