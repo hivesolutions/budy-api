@@ -46,3 +46,23 @@ class BagApi(object):
             **kwargs
         )
         return contents
+
+    def create_bag(self, payload):
+        url = self.base_url + "bags"
+        contents = self.post(url, data_j = payload, auth = False)
+        return contents
+
+    def key_bag(self):
+        url = self.base_url + "bags/key"
+        contents = self.get(url, auth = False)
+        return contents
+
+    def get_bag(self, key):
+        url = self.base_url + "bags/%s" % key
+        contents = self.get(url, auth = False)
+        return contents
+
+    def add_line_bag(self, key, payload):
+        url = self.base_url + "bags/%s/lines" % key
+        contents = self.post(url, data_j = payload, auth = False)
+        return contents
