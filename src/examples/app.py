@@ -43,8 +43,12 @@ from . import base
 
 class BudyApp(appier.WebApp):
 
-    def __init__(self):
-        appier.WebApp.__init__(self, name = "budy")
+    def __init__(self, *args, **kwargs):
+        appier.WebApp.__init__(
+            self,
+            name = "budy",
+            *args, **kwargs
+        )
 
     @appier.route("/", "GET")
     def index(self):
