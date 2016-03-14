@@ -37,13 +37,12 @@ __copyright__ = "Copyright (c) 2008-2016 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-class ColorApi(object):
+class BagApi(object):
 
-    def list_colors(self, *args, **kwargs):
-        url = self.base_url + "colors"
+    def list_bags(self, *args, **kwargs):
+        url = self.base_url + "bags"
         contents = self.get(
             url,
-            auth = False,
             **kwargs
         )
         return contents

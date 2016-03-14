@@ -43,6 +43,7 @@ class CategoryApi(object):
         url = self.base_url + "categories"
         contents = self.get(
             url,
+            auth = False,
             **kwargs
         )
         return contents

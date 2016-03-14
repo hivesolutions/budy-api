@@ -37,13 +37,13 @@ __copyright__ = "Copyright (c) 2008-2016 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-class ColorApi(object):
+import appier
 
-    def list_colors(self, *args, **kwargs):
-        url = self.base_url + "colors"
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
-        return contents
+import budy
+
+def get_api():
+    return budy.Api(
+        base_url = appier.conf("BUDY_BASE_URL"),
+        username = appier.conf("BUDY_USERNAME"),
+        password = appier.conf("BUDY_PASSWORD"),
+    )

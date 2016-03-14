@@ -39,6 +39,7 @@ __license__ = "Apache License, Version 2.0"
 
 import appier
 
+from . import bag
 from . import color
 from . import product
 from . import category
@@ -50,6 +51,7 @@ base url value is provided to the constructor """
 
 class Api(
     appier.Api,
+    bag.BagApi,
     color.ColorApi,
     product.ProductApi,
     category.CategoryApi,
@@ -59,4 +61,50 @@ class Api(
     def __init__(self, *args, **kwargs):
         appier.Api.__init__(self, *args, **kwargs)
         self.base_url = appier.conf("BUDY_BASE_URL", BASE_URL)
+        self.username = appier.conf("BUDY_USERNAME", None)
+        self.password = appier.conf("BUDY_PASSWORD", None)
         self.base_url = kwargs.get("base_url", self.base_url)
+        self.username = kwargs.get("username", self.username)
+        self.password = kwargs.get("password", self.password)
+        self.session_id = kwargs.get("session_id", None)
+        self.tokens = kwargs.get("tokens", None)
+
+    def build(
+        self,
+        method,
+        url,
+        data = None,
+        data_j = None,
+        data_m = None,
+        headers = None,
+        params = None,
+        mime = None,
+        kwargs = None
+    ):
+        auth = kwargs.pop("auth", True)
+        if auth: kwargs["session_id"] = self.get_session_id()
+
+    def get_session_id(self):
+        if self.session_id: return self.session_id
+        return self.login()
+
+    def auth_callback(self, params, headers):
+        self.session_id = None
+        session_id = self.get_session_id()
+        params["session_id"] = session_id
+
+    def login(self, username = None, password = None):
+        username = username or self.username
+        password = password or self.password
+        url = self.base_url + "login"
+        contents = self.post(
+            url,
+            auth = False,
+            username = username,
+            password = password
+        )
+        self.username = contents.get("username", None)
+        self.session_id = contents.get("session_id", None)
+        self.tokens = contents.get("tokens", None)
+        self.trigger("auth", contents)
+        return self.session_id

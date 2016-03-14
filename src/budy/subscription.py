@@ -41,5 +41,5 @@ class SubscriptionApi(object):
 
     def create_subscription(self, payload):
         url = self.base_url + "subscriptions"
-        contents = self.post(url, data_j = payload)
+        contents = self.post(url, data_j = payload, auth = False)
         return contents

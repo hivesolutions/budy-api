@@ -43,11 +43,12 @@ class ProductApi(object):
         url = self.base_url + "products"
         contents = self.get(
             url,
+            auth = False,
             **kwargs
         )
         return contents
 
     def get_product(self, id):
         url = self.base_url + "products/%d" % id
-        contents = self.get(url)
+        contents = self.get(url, auth = False)
         return contents
