@@ -56,6 +56,12 @@ class BudyApp(appier.WebApp):
         products = api.list_products()
         return products
 
+    @appier.route("/bags", "GET")
+    def bags(self):
+        api = self.get_api()
+        bags = api.list_bags()
+        return bags
+
     def get_api(self):
         return base.get_api()
 
