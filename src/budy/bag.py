@@ -67,6 +67,11 @@ class BagApi(object):
         contents = self.post(url, data_j = payload, auth = False)
         return contents
 
+    def remove_line_bag(self, key, line_id):
+        url = self.base_url + "bags/%s/lines/%d" % (key, line_id)
+        contents = self.delete(url, auth = False)
+        return contents
+
     def add_update_line_bag(self, key, payload):
         url = self.base_url + "bags/%s/lines/add_update" % key
         contents = self.post(url, data_j = payload, auth = False)
