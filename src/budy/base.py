@@ -61,9 +61,13 @@ class Api(
     def __init__(self, *args, **kwargs):
         appier.Api.__init__(self, *args, **kwargs)
         self.base_url = appier.conf("BUDY_BASE_URL", BASE_URL)
+        self.country = appier.conf("BUDY_COUNTRY", "US")
+        self.currency = appier.conf("BUDY_CURRENCY", "USD")
         self.username = appier.conf("BUDY_USERNAME", None)
         self.password = appier.conf("BUDY_PASSWORD", None)
         self.base_url = kwargs.get("base_url", self.base_url)
+        self.country = kwargs.get("country", self.country)
+        self.currency = kwargs.get("currency", self.currency)
         self.username = kwargs.get("username", self.username)
         self.password = kwargs.get("password", self.password)
         self.session_id = kwargs.get("session_id", None)
@@ -83,6 +87,8 @@ class Api(
     ):
         auth = kwargs.pop("auth", True)
         if auth: kwargs["session_id"] = self.get_session_id()
+        headers["BD-Country"] = kwargs.pop("country", self.country)
+        headers["BD-Currency"] = kwargs.pop("currency", self.currency)
 
     def get_session_id(self):
         if self.session_id: return self.session_id
