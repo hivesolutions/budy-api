@@ -87,8 +87,8 @@ class Api(
     ):
         auth = kwargs.pop("auth", True)
         if auth: kwargs["session_id"] = self.get_session_id()
-        headers["BD-Country"] = kwargs.pop("country", self.country)
-        headers["BD-Currency"] = kwargs.pop("currency", self.currency)
+        headers["X-Budy-Country"] = kwargs.pop("country", self.country)
+        headers["X-Budy-Currency"] = kwargs.pop("currency", self.currency)
 
     def get_session_id(self):
         if self.session_id: return self.session_id
