@@ -62,6 +62,11 @@ class BagApi(object):
         contents = self.get(url, auth = False)
         return contents
 
+    def merge_bag(self, key, target):
+        url = self.base_url + "bags/%s/merge/%s" % (key, target)
+        contents = self.put(url, auth = False)
+        return contents
+
     def add_line_bag(self, key, payload):
         url = self.base_url + "bags/%s/lines" % key
         contents = self.post(url, data_j = payload, auth = False)
