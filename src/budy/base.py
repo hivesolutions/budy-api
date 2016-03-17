@@ -41,6 +41,7 @@ import appier
 
 from . import bag
 from . import color
+from . import account
 from . import country
 from . import product
 from . import category
@@ -54,6 +55,7 @@ class Api(
     appier.Api,
     bag.BagApi,
     color.ColorApi,
+    account.AccountApi,
     country.CountryApi,
     product.ProductApi,
     category.CategoryApi,
@@ -107,6 +109,7 @@ class Api(
         url = self.base_url + "login"
         contents = self.post(
             url,
+            callback = False,
             auth = False,
             username = username,
             password = password
