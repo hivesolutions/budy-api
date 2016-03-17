@@ -41,6 +41,7 @@ import appier
 
 from . import bag
 from . import color
+from . import country
 from . import product
 from . import category
 from . import subscription
@@ -53,6 +54,7 @@ class Api(
     appier.Api,
     bag.BagApi,
     color.ColorApi,
+    country.CountryApi,
     product.ProductApi,
     category.CategoryApi,
     subscription.SubscriptionApi

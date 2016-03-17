@@ -19,6 +19,9 @@
 # You should have received a copy of the Apache License along with
 # Hive Budy API. If not, see <http://www.apache.org/licenses/>.
 
+__author__ = "João Magalhães <joamag@hive.pt>"
+""" The author(s) of the module """
+
 __version__ = "1.0.0"
 """ The version of the module """
 
@@ -34,16 +37,13 @@ __copyright__ = "Copyright (c) 2008-2016 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-from . import bag
-from . import base
-from . import category
-from . import color
-from . import country
-from . import product
+class CountryApi(object):
 
-from .bag import BagApi
-from .base import Api
-from .category import CategoryApi
-from .color import ColorApi
-from .country import CountryApi
-from .product import ProductApi
+    def list_countries(self, *args, **kwargs):
+        url = self.base_url + "countries"
+        contents = self.get(
+            url,
+            auth = False,
+            **kwargs
+        )
+        return contents
