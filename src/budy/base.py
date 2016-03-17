@@ -90,7 +90,9 @@ class Api(
         kwargs = None
     ):
         auth = kwargs.pop("auth", True)
+        anonymous = kwargs.pop("auth", False)
         if auth: kwargs["session_id"] = self.get_session_id()
+        if not anonymous: kwargs["session_id"] = self.session_id
         headers["X-Budy-Country"] = kwargs.pop("country", self.country)
         headers["X-Budy-Currency"] = kwargs.pop("currency", self.currency)
 
