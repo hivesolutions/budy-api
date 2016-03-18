@@ -56,3 +56,8 @@ class OrderApi(object):
         url = self.base_url + "orders/%s/shipping_address" % key
         contents = self.put(url, data_j = payload)
         return contents
+
+    def set_billing_address_order(self, key, payload):
+        url = self.base_url + "orders/%s/billing_address" % key
+        contents = self.put(url, data_j = payload)
+        return contents
