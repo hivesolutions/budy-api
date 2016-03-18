@@ -47,12 +47,17 @@ class AddressApi(object):
         )
         return contents
 
+    def create_address(self, payload):
+        url = self.base_url + "addresses"
+        contents = self.post(url, data_j = payload)
+        return contents
+
     def get_address(self, key):
         url = self.base_url + "addresses/%s" % key
-        contents = self.get(url, auth = False)
+        contents = self.get(url)
         return contents
 
     def update_address(self, key, payload):
         url = self.base_url + "addresses/%s" % key
-        contents = self.put(url, data_j = payload, auth = False)
+        contents = self.put(url, data_j = payload)
         return contents

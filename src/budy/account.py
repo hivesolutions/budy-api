@@ -48,3 +48,8 @@ class AccountApi(object):
         url = self.base_url + "accounts/me/addresses"
         contents = self.get(url)
         return contents
+
+    def create_addresses_me_account(self, payload):
+        url = self.base_url + "accounts/me/addresses"
+        contents = self.post(url, data_j = payload)
+        return contents
