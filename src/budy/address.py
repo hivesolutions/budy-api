@@ -61,3 +61,8 @@ class AddressApi(object):
         url = self.base_url + "addresses/%s" % key
         contents = self.put(url, data_j = payload)
         return contents
+
+    def delete_address(self, key):
+        url = self.base_url + "addresses/%s" % key
+        contents = self.delete(url)
+        return contents

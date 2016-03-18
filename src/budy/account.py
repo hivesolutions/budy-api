@@ -53,3 +53,8 @@ class AccountApi(object):
         url = self.base_url + "accounts/me/addresses"
         contents = self.post(url, data_j = payload)
         return contents
+
+    def delete_address_me_account(self, key):
+        url = self.base_url + "accounts/me/addresses/%s" % key
+        contents = self.delete(url)
+        return contents
