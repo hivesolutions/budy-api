@@ -19,6 +19,9 @@
 # You should have received a copy of the Apache License along with
 # Hive Budy API. If not, see <http://www.apache.org/licenses/>.
 
+__author__ = "João Magalhães <joamag@hive.pt>"
+""" The author(s) of the module """
+
 __version__ = "1.0.0"
 """ The version of the module """
 
@@ -34,20 +37,17 @@ __copyright__ = "Copyright (c) 2008-2016 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-from . import account
-from . import bag
-from . import base
-from . import category
-from . import color
-from . import country
-from . import order
-from . import product
+class OrderApi(object):
 
-from .account import AccountApi
-from .bag import BagApi
-from .base import Api
-from .category import CategoryApi
-from .color import ColorApi
-from .country import CountryApi
-from .order import OrderApi
-from .product import ProductApi
+    def list_orders(self, *args, **kwargs):
+        url = self.base_url + "orders"
+        contents = self.get(
+            url,
+            **kwargs
+        )
+        return contents
+
+    def get_order(self, key):
+        url = self.base_url + "orders/%s" % key
+        contents = self.get(url, auth = False)
+        return contents
