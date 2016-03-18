@@ -51,3 +51,8 @@ class AddressApi(object):
         url = self.base_url + "addresses/%s" % key
         contents = self.get(url, auth = False)
         return contents
+
+    def update_address(self, key, payload):
+        url = self.base_url + "addresses/%s" % key
+        contents = self.put(url, data_j = payload, auth = False)
+        return contents
