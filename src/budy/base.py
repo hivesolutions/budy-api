@@ -43,6 +43,7 @@ from . import bag
 from . import color
 from . import order
 from . import account
+from . import address
 from . import country
 from . import product
 from . import category
@@ -58,6 +59,7 @@ class Api(
     color.ColorApi,
     order.OrderApi,
     account.AccountApi,
+    address.AddressApi,
     country.CountryApi,
     product.ProductApi,
     category.CategoryApi,
