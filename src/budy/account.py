@@ -43,3 +43,8 @@ class AccountApi(object):
         url = self.base_url + "accounts/me"
         contents = self.get(url)
         return contents
+
+    def addresses_me_account(self):
+        url = self.base_url + "accounts/me/addresses"
+        contents = self.get(url)
+        return contents
