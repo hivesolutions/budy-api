@@ -39,7 +39,7 @@ __license__ = "Apache License, Version 2.0"
 
 class AddressApi(object):
 
-    def list_bags(self, *args, **kwargs):
+    def list_addresses(self, *args, **kwargs):
         url = self.base_url + "addresses"
         contents = self.get(
             url,
@@ -47,7 +47,7 @@ class AddressApi(object):
         )
         return contents
 
-    def get_bag(self, key):
+    def get_address(self, key):
         url = self.base_url + "addresses/%s" % key
         contents = self.get(url, auth = False)
         return contents
