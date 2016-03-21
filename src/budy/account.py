@@ -44,6 +44,11 @@ class AccountApi(object):
         contents = self.get(url)
         return contents
 
+    def update_me_account(self, payload):
+        url = self.base_url + "accounts/me"
+        contents = self.put(url, data_j = payload)
+        return contents
+
     def orders_me_account(self):
         url = self.base_url + "accounts/me/orders"
         contents = self.get(url)
