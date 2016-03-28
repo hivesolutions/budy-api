@@ -49,7 +49,7 @@ class OrderApi(object):
 
     def get_order(self, key):
         url = self.base_url + "orders/%s" % key
-        contents = self.get(url)
+        contents = self.get(url, auth = False)
         return contents
 
     def set_shipping_address_order(self, key, payload):
