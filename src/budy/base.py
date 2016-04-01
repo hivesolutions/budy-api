@@ -47,6 +47,7 @@ from . import address
 from . import country
 from . import product
 from . import category
+from . import collection
 from . import subscription
 
 BASE_URL = "http://localhost:8080/api/"
@@ -63,6 +64,7 @@ class Api(
     country.CountryApi,
     product.ProductApi,
     category.CategoryApi,
+    collection.CollectionApi,
     subscription.SubscriptionApi
 ):
 
