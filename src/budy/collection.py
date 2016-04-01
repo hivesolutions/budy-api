@@ -47,3 +47,8 @@ class CollectionApi(object):
             **kwargs
         )
         return contents
+
+    def get_collection(self, id):
+        url = self.base_url + "collections/%d" % id
+        contents = self.get(url, auth = False)
+        return contents
