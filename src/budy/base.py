@@ -46,6 +46,7 @@ from . import account
 from . import address
 from . import country
 from . import product
+from . import voucher
 from . import category
 from . import collection
 from . import subscription
@@ -63,6 +64,7 @@ class Api(
     address.AddressApi,
     country.CountryApi,
     product.ProductApi,
+    voucher.VoucherApi,
     category.CategoryApi,
     collection.CollectionApi,
     subscription.SubscriptionApi
