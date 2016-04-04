@@ -67,6 +67,11 @@ class OrderApi(object):
         contents = self.put(url, data_j = payload)
         return contents
 
+    def set_voucher_order(self, key, payload):
+        url = self.base_url + "orders/%s/voucher" % key
+        contents = self.put(url, data_j = payload)
+        return contents
+
     def pay_order(self, key, payload):
         url = self.base_url + "orders/%s/pay" % key
         contents = self.put(url, data_j = payload)
