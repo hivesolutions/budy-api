@@ -82,6 +82,11 @@ class BagApi(object):
         contents = self.post(url, data_j = payload, auth = False)
         return contents
 
+    def empty_bag(self, key):
+        url = self.base_url + "bags/%s/empty" % key
+        contents = self.get(url, auth = False)
+        return contents
+
     def order_bag(self, key):
         url = self.base_url + "bags/%s/order" % key
         contents = self.get(url, auth = False)
