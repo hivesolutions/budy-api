@@ -62,6 +62,16 @@ class OrderApi(object):
         contents = self.put(url, data_j = payload)
         return contents
 
+    def set_store_shipping_order(self, key):
+        url = self.base_url + "orders/%s/store_shipping" % key
+        contents = self.put(url)
+        return contents
+
+    def set_store_billing_order(self, key):
+        url = self.base_url + "orders/%s/store_billing" % key
+        contents = self.put(url)
+        return contents
+
     def set_email_order(self, key, payload):
         url = self.base_url + "orders/%s/email" % key
         contents = self.put(url, data_j = payload)
