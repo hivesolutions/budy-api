@@ -87,6 +87,11 @@ class OrderApi(object):
         contents = self.put(url, data_j = payload)
         return contents
 
+    def wait_payment_order(self, key, payload):
+        url = self.base_url + "orders/%s/wait_payment" % key
+        contents = self.put(url, data_j = payload)
+        return contents
+
     def pay_order(self, key, payload):
         url = self.base_url + "orders/%s/pay" % key
         contents = self.put(url, data_j = payload)
