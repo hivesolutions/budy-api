@@ -41,7 +41,11 @@ class AccountApi(object):
 
     def create_account(self, payload):
         url = self.base_url + "accounts"
-        contents = self.post(url, auth = False, data_j = payload)
+        contents = self.post(
+            url,
+            auth = False,
+            data_j = payload
+        )
         return contents
 
     def me_account(self):
