@@ -53,7 +53,7 @@ class ProductApi(object):
         contents = self.get(url, auth = False)
         return contents
 
-    def get_product_related(self, id, *args, **kwargs):
+    def related_product(self, id, *args, **kwargs):
         url = self.base_url + "products/%d/related" % id
         contents = self.get(
             url,
