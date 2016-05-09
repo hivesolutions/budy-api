@@ -53,6 +53,21 @@ class AccountApi(object):
         contents = self.get(url)
         return contents
 
+    def recover_account(self, username):
+        url = self.base_url + "accounts/recover"
+        contents = self.get(url, username = username)
+        return contents
+
+    def reset_account(self, username, password, token):
+        url = self.base_url + "accounts/recover"
+        contents = self.post(
+            url,
+            username = username,
+            password = password,
+            token = token
+        )
+        return contents
+
     def update_me_account(self, payload):
         url = self.base_url + "accounts/me"
         contents = self.put(url, data_j = payload)
