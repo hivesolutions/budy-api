@@ -53,14 +53,14 @@ class AccountApi(object):
         contents = self.get(url)
         return contents
 
-    def avatar_me_account(self):
-        url = self.base_url + "accounts/me/avatar/data"
-        contents = self.get(url)
-        return contents
-
     def update_me_account(self, payload):
         url = self.base_url + "accounts/me"
         contents = self.put(url, data_j = payload)
+        return contents
+
+    def avatar_me_account(self):
+        url = self.base_url + "accounts/me/avatar/data"
+        contents = self.get(url)
         return contents
 
     def orders_me_account(self):
