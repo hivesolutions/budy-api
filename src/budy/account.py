@@ -59,7 +59,7 @@ class AccountApi(object):
         return contents
 
     def avatar_me_account(self):
-        url = self.base_url + "accounts/me/avatar/data"
+        url = self.base_url + "accounts/me/avatar"
         contents = self.get(url)
         return contents
 
