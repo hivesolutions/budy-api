@@ -82,3 +82,8 @@ class AccountApi(object):
         url = self.base_url + "accounts/me/addresses/%s" % key
         contents = self.delete(url)
         return contents
+
+    def confirm_account(self, token):
+        url = self.base_url + "accounts/confirm/%s" % token
+        contents = self.get(url, auth = False)
+        return contents
