@@ -39,6 +39,14 @@ __license__ = "Apache License, Version 2.0"
 
 class AccountApi(object):
 
+    def list_accounts(self, *args, **kwargs):
+        url = self.base_url + "accounts"
+        contents = self.get(
+            url,
+            **kwargs
+        )
+        return contents
+
     def create_account(self, payload, pre_enabled = False):
         url = self.base_url + "accounts"
         contents = self.post(
