@@ -39,13 +39,14 @@ __license__ = "Apache License, Version 2.0"
 
 class AccountApi(object):
 
-    def create_account(self, payload, pre_enabled = True):
+    def create_account(self, payload, pre_enabled = False):
         url = self.base_url + "accounts"
+        pre_enabled_s = "1" if pre_enabled else ""
         contents = self.post(
             url,
             auth = False,
             data_j = payload,
-            params = dict(pre_enabled = pre_enabled)
+            params = dict(pre_enabled = pre_enabled_s)
         )
         return contents
 
