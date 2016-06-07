@@ -39,12 +39,13 @@ __license__ = "Apache License, Version 2.0"
 
 class AccountApi(object):
 
-    def create_account(self, payload):
+    def create_account(self, payload, pre_enabled = True):
         url = self.base_url + "accounts"
         contents = self.post(
             url,
             auth = False,
-            data_j = payload
+            data_j = payload,
+            params = dict(pre_enabled = pre_enabled)
         )
         return contents
 
@@ -73,6 +74,11 @@ class AccountApi(object):
         contents = self.put(url, data_j = payload)
         return contents
 
+    def avatar_me_account(self):
+        url = self.base_url + "accounts/me/avatar"
+        contents = self.get(url)
+        return contents
+
     def orders_me_account(self):
         url = self.base_url + "accounts/me/orders"
         contents = self.get(url)
@@ -91,4 +97,9 @@ class AccountApi(object):
     def delete_address_me_account(self, key):
         url = self.base_url + "accounts/me/addresses/%s" % key
         contents = self.delete(url)
+        return contents
+
+    def confirm_account(self, token):
+        url = self.base_url + "accounts/confirm/%s" % token
+        contents = self.get(url, auth = False)
         return contents

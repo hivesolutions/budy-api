@@ -96,3 +96,13 @@ class OrderApi(object):
         url = self.base_url + "orders/%s/pay" % key
         contents = self.put(url, data_j = payload)
         return contents
+
+    def end_pay_order(self, key, payload):
+        url = self.base_url + "orders/%s/end_pay" % key
+        contents = self.put(url, data_j = payload)
+        return contents
+
+    def cancel_order(self, key, payload):
+        url = self.base_url + "orders/%s/cancel" % key
+        contents = self.put(url, data_j = payload)
+        return contents
