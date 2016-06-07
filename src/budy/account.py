@@ -41,12 +41,11 @@ class AccountApi(object):
 
     def create_account(self, payload, pre_enabled = False):
         url = self.base_url + "accounts"
-        pre_enabled_s = "1" if pre_enabled else ""
         contents = self.post(
             url,
             auth = False,
             data_j = payload,
-            params = dict(pre_enabled = pre_enabled_s)
+            params = dict(pre_enabled = pre_enabled)
         )
         return contents
 
