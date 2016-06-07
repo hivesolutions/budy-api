@@ -49,11 +49,6 @@ class AccountApi(object):
         )
         return contents
 
-    def me_account(self):
-        url = self.base_url + "accounts/me"
-        contents = self.get(url)
-        return contents
-
     def recover_account(self, username):
         url = self.base_url + "accounts/recover/%s" % username
         contents = self.get(url, auth = False)
@@ -68,6 +63,11 @@ class AccountApi(object):
             token = token,
             auth = False
         )
+        return contents
+
+    def me_account(self):
+        url = self.base_url + "accounts/me"
+        contents = self.get(url)
         return contents
 
     def update_me_account(self, payload):
