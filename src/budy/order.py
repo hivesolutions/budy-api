@@ -87,6 +87,15 @@ class OrderApi(object):
         contents = self.put(url, data_j = payload)
         return contents
 
+    def set_meta_order(self, key, name, value):
+        url = self.base_url + "orders/%s/meta" % key
+        contents = self.put(
+            url,
+            name = name,
+            value = value
+        )
+        return contents
+
     def wait_payment_order(self, key, payload):
         url = self.base_url + "orders/%s/wait_payment" % key
         contents = self.put(url, data_j = payload)
