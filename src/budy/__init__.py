@@ -44,6 +44,7 @@ from . import color
 from . import country
 from . import order
 from . import product
+from . import referral
 from . import subscription
 from . import voucher
 
@@ -57,5 +58,6 @@ from .color import ColorApi
 from .country import CountryApi
 from .order import OrderApi
 from .product import ProductApi
+from .referral import ReferralApi
 from .subscription import SubscriptionApi
 from .voucher import VoucherApi
