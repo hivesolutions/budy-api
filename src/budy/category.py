@@ -48,12 +48,12 @@ class CategoryApi(object):
         )
         return contents
 
-    def get_categories(self, id):
+    def get_category(self, id):
         url = self.base_url + "categories/%d" % id
         contents = self.get(url, auth = False)
         return contents
 
-    def slug_categories(self, slug):
+    def slug_category(self, slug):
         url = self.base_url + "categories/slug/%s" % slug
         contents = self.get(url, auth = False)
         return contents

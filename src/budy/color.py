@@ -48,12 +48,12 @@ class ColorApi(object):
         )
         return contents
 
-    def get_colors(self, id):
+    def get_color(self, id):
         url = self.base_url + "colors/%d" % id
         contents = self.get(url, auth = False)
         return contents
 
-    def slug_colors(self, slug):
+    def slug_color(self, slug):
         url = self.base_url + "colors/slug/%s" % slug
         contents = self.get(url, auth = False)
         return contents
