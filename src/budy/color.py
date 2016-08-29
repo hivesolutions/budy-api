@@ -47,3 +47,13 @@ class ColorApi(object):
             **kwargs
         )
         return contents
+
+    def get_colors(self, id):
+        url = self.base_url + "colors/%d" % id
+        contents = self.get(url, auth = False)
+        return contents
+
+    def slug_colors(self, slug):
+        url = self.base_url + "colors/slug/%s" % slug
+        contents = self.get(url, auth = False)
+        return contents
