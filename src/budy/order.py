@@ -96,9 +96,9 @@ class OrderApi(object):
         )
         return contents
 
-    def set_account_order(self, key, payload):
+    def set_account_order(self, key):
         url = self.base_url + "orders/%s/account" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url)
         return contents
 
     def wait_payment_order(self, key, payload):
