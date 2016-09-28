@@ -66,8 +66,8 @@ class Api(
     country.CountryApi,
     product.ProductApi,
     voucher.VoucherApi,
-    referral.ReferralApi,
     category.CategoryApi,
+    referral.ReferralApi,
     collection.CollectionApi,
     subscription.SubscriptionApi
 ):
