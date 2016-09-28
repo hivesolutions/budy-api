@@ -52,3 +52,8 @@ class CollectionApi(object):
         url = self.base_url + "collections/%d" % id
         contents = self.get(url, auth = False)
         return contents
+
+    def slug_collection(self, slug):
+        url = self.base_url + "collections/slug/%s" % slug
+        contents = self.get(url, auth = False)
+        return contents

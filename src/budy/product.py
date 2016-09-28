@@ -70,3 +70,12 @@ class ProductApi(object):
             **kwargs
         )
         return contents
+
+    def share_product(self, id, *args, **kwargs):
+        url = self.base_url + "products/%d/share" % id
+        contents = self.get(
+            url,
+            auth = False,
+            **kwargs
+        )
+        return contents
