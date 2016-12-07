@@ -82,6 +82,11 @@ class OrderApi(object):
         contents = self.put(url, data_j = payload)
         return contents
 
+    def set_gift_wrap_order(self, key, payload):
+        url = self.base_url + "orders/%s/gift_wrap" % key
+        contents = self.put(url, data_j = payload)
+        return contents
+
     def set_referral_order(self, key, payload):
         url = self.base_url + "orders/%s/referral" % key
         contents = self.put(url, data_j = payload)
