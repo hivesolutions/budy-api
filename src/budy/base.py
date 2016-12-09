@@ -131,3 +131,8 @@ class Api(
         self.tokens = contents.get("tokens", None)
         self.trigger("auth", contents)
         return self.session_id
+
+    def is_auth(self):
+        if not self.username: return False
+        if not self.password: return False
+        return True
