@@ -72,3 +72,5 @@ class BudyApp(appier.WebApp):
 if __name__ == "__main__":
     app = BudyApp()
     app.serve()
+else:
+    __path__ = []
