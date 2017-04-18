@@ -96,9 +96,9 @@ class AccountApi(object):
         contents = self.get(url)
         return contents
 
-    def addresses_me_account(self):
+    def addresses_me_account(self, *args, **kwargs):
         url = self.base_url + "accounts/me/addresses"
-        contents = self.get(url)
+        contents = self.get(url, **kwargs)
         return contents
 
     def create_addresses_me_account(self, payload):
