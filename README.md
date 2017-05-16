@@ -1,4 +1,4 @@
-# [Budy API](http://budy_api.hive.pt)
+# [Budy API](http://budy-api.hive.pt)
 
 Budy API Python client.
 
