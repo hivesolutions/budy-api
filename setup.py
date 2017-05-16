@@ -48,7 +48,7 @@ setuptools.setup(
     description = "Budy API Client",
     license = "Apache License, Version 2.0",
     keywords = "budy api",
-    url = "http://budy_api.hive.pt",
+    url = "http://budy-api.hive.pt",
     zip_safe = False,
     packages = [
         "budy",
