@@ -42,7 +42,7 @@ import appier
 import budy
 
 def get_api():
-    return budy.Api(
+    return budy.API(
         username = appier.conf("BUDY_USERNAME"),
         password = appier.conf("BUDY_PASSWORD")
     )

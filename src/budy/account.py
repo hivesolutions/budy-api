@@ -39,7 +39,7 @@ __license__ = "Apache License, Version 2.0"
 
 import appier
 
-class AccountApi(object):
+class AccountAPI(object):
 
     def list_accounts(self, *args, **kwargs):
         url = self.base_url + "accounts"

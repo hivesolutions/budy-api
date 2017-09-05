@@ -56,24 +56,24 @@ BASE_URL = "http://localhost:8080/api/"
 """ The default base url to be used when no other
 base url value is provided to the constructor """
 
-class Api(
-    appier.Api,
-    bag.BagApi,
-    color.ColorApi,
-    order.OrderApi,
-    account.AccountApi,
-    address.AddressApi,
-    country.CountryApi,
-    product.ProductApi,
-    voucher.VoucherApi,
-    category.CategoryApi,
-    referral.ReferralApi,
-    collection.CollectionApi,
-    subscription.SubscriptionApi
+class API(
+    appier.API,
+    bag.BagAPI,
+    color.ColorAPI,
+    order.OrderAPI,
+    account.AccountAPI,
+    address.AddressAPI,
+    country.CountryAPI,
+    product.ProductAPI,
+    voucher.VoucherAPI,
+    category.CategoryAPI,
+    referral.ReferralAPI,
+    collection.CollectionAPI,
+    subscription.SubscriptionAPI
 ):
 
     def __init__(self, *args, **kwargs):
-        appier.Api.__init__(self, *args, **kwargs)
+        appier.API.__init__(self, *args, **kwargs)
         self.base_url = appier.conf("BUDY_BASE_URL", BASE_URL)
         self.country = appier.conf("BUDY_COUNTRY", "US")
         self.currency = appier.conf("BUDY_CURRENCY", "USD")
