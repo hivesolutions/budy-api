@@ -8,7 +8,7 @@ Budy API Python client.
 * `BUDY_COUNTRY` (`str`) - The country as an ISO 3166-1 to be used for API interactions (defaults to `US`)
 * `BUDY_CURRENCY` (`str`) - The ISO 4217 code that decribes the currency to be used for API interactions (defaults to `USD`)
 * `BUDY_USERNAME` (`str`) - The username to be used for authentication (defaults to `None`)
-* `BUDY_PASSWORD` (`str`) - The password to be user for authentication (default to `None`)
+* `BUDY_PASSWORD` (`str`) - The password to be user for authentication (defaults to `None`)
 
 ## License
 
