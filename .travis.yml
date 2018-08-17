@@ -32,7 +32,7 @@ deploy:
   provider: pypi
   user: joamag
   password:
-    secure: XEtINNbTLBwP84F8oIL9U0F1qmCcImE/ZGVTls8A2MWHuvD3Vvgkxf72jbe7waz+6Fwxr5uda9MtfGv+6YTrLgjOlqVyc1QZP7+0xmIFDvKHLeSPQBt7twsXzjfT1bQ1szvr+LQNylhAMsA/60HqE8YTP97cF01ohTFJEFbngsc=
+    secure: CnGBUBm8oNBSzYJAHOaaE5Txf8711Qhrrge5qtuQjGeY0GlIQdQhxwO2RAYzEQ/IAdxz/Muz0A/q0TC7olTEDunqgQPPDnbI+tD/U8pvVoqpnCJLhDj2Fa9dQf2I3/VUdR0W5gws93NsKL99p91yE4YJfnGTZpXRbxnSVVB3gqk=
   distributions: sdist bdist_wheel
   on:
     tags: true
