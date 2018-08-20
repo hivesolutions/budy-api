@@ -46,8 +46,9 @@ from . import account
 from . import address
 from . import country
 from . import product
-from . import referral
+from . import section
 from . import voucher
+from . import referral
 from . import category
 from . import collection
 from . import subscription
@@ -65,6 +66,7 @@ class API(
     address.AddressAPI,
     country.CountryAPI,
     product.ProductAPI,
+    section.SectionAPI,
     voucher.VoucherAPI,
     category.CategoryAPI,
     referral.ReferralAPI,
