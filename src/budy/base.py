@@ -42,6 +42,8 @@ import appier
 from . import bag
 from . import color
 from . import order
+from . import brand
+from . import season
 from . import account
 from . import address
 from . import country
@@ -62,6 +64,8 @@ class API(
     bag.BagAPI,
     color.ColorAPI,
     order.OrderAPI,
+    brand.BrandAPI,
+    season.SeasonAPI,
     account.AccountAPI,
     address.AddressAPI,
     country.CountryAPI,
