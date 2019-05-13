@@ -1,6 +1,6 @@
 # [Budy API](http://budy-api.hive.pt)
 
-Budy API Python client.
+[Budy](http://budy.hive.pt) API Python client, to be used for simple synchronous integration.
 
 ## Configuration
 
