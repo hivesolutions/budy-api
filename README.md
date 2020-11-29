@@ -4,13 +4,13 @@
 
 ## Configuration
 
-| Name | Type | Description |
-| ----- | ----- | ----- |
-| **BUDY_BASE_URL** | `str` | The base URL that is going to be used for API connections (defaults to `None`). |
-| **BUDY_COUNTRY** | `str` | The country as an ISO 3166-1 to be used for API interactions (defaults to `US`). |
-| **BUDY_CURRENCY** | `str` | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code that describes the currency to be used for API interactions (defaults to `USD`). |
-| **BUDY_USERNAME** | `str` | The username to be used for authentication (defaults to `None`). |
-| **BUDY_PASSWORD** | `str` | The password to be user for authentication (defaults to `None`). |
+| Name              | Type  | Default | Description                                                                                                              |
+| ----------------- | ----- | ------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **BUDY_BASE_URL** | `str` | `None`  | The base URL that is going to be used for API connections.                                                               |
+| **BUDY_COUNTRY**  | `str` | `US`    | The country as an ISO 3166-1 to be used for API interactions.                                                            |
+| **BUDY_CURRENCY** | `str` | `USD`   | The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code that describes the currency to be used for API interactions. |
+| **BUDY_USERNAME** | `str` | `None`  | The username to be used for authentication.                                                                              |
+| **BUDY_PASSWORD** | `str` | `None`  | The password to be user for authentication.                                                                              |
 
 ## License
 
