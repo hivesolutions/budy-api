@@ -42,7 +42,7 @@ import setuptools
 
 setuptools.setup(
     name = "budy_api",
-    version = "0.2.18",
+    version = "0.3.0",
     author = "Hive Solutions Lda.",
     author_email = "development@hive.pt",
     description = "Budy API Client",
