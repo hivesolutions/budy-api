@@ -79,3 +79,12 @@ class ProductAPI(object):
             **kwargs
         )
         return contents
+
+    def quote_product(self, id, *args, **kwargs):
+        url = self.base_url + "products/%d/quote" % id
+        contents = self.get(
+            url,
+            auth = False,
+            **kwargs
+        )
+        return contents
