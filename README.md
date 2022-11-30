@@ -18,8 +18,8 @@ Budy API is currently licensed under the [Apache License, Version 2.0](http://ww
 
 ## Build Automation
 
-[![Build Status](https://app.travis-ci.com/hivesolutions/budy_api.svg?branch=master)](https://travis-ci.com/github/hivesolutions/budy_api)
-[![Build Status GitHub](https://github.com/hivesolutions/budy_api/workflows/Main%20Workflow/badge.svg)](https://github.com/hivesolutions/budy_api/actions)
-[![Coverage Status](https://coveralls.io/repos/hivesolutions/budy_api/badge.svg?branch=master)](https://coveralls.io/r/hivesolutions/budy_api?branch=master)
-[![PyPi Status](https://img.shields.io/pypi/v/budy_api.svg)](https://pypi.python.org/pypi/budy_api)
+[![Build Status](https://app.travis-ci.com/hivesolutions/budy-api.svg?branch=master)](https://travis-ci.com/github/hivesolutions/budy-api)
+[![Build Status GitHub](https://github.com/hivesolutions/budy-api/workflows/Main%20Workflow/badge.svg)](https://github.com/hivesolutions/budy-api/actions)
+[![Coverage Status](https://coveralls.io/repos/hivesolutions/budy-api/badge.svg?branch=master)](https://coveralls.io/r/hivesolutions/budy-api?branch=master)
+[![PyPi Status](https://img.shields.io/pypi/v/budy-api.svg)](https://pypi.python.org/pypi/budy-api)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/)

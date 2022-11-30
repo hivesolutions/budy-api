@@ -41,7 +41,7 @@ import os
 import setuptools
 
 setuptools.setup(
-    name = "budy_api",
+    name = "budy-api",
     version = "0.3.1",
     author = "Hive Solutions Lda.",
     author_email = "development@hive.pt",
