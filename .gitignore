@@ -5,4 +5,4 @@ session.shelve*
 
 /dist
 /build
-/src/budy-api.egg-info
+/src/budy_api.egg-info
