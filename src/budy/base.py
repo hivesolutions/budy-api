@@ -43,6 +43,7 @@ from . import bag
 from . import color
 from . import order
 from . import brand
+from . import store
 from . import season
 from . import account
 from . import address
@@ -65,6 +66,7 @@ class API(
     color.ColorAPI,
     order.OrderAPI,
     brand.BrandAPI,
+    store.StoreAPI,
     season.SeasonAPI,
     account.AccountAPI,
     address.AddressAPI,

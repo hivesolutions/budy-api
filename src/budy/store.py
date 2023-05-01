@@ -19,6 +19,9 @@
 # You should have received a copy of the Apache License along with
 # Hive Budy API. If not, see <http://www.apache.org/licenses/>.
 
+__author__ = "João Magalhães <joamag@hive.pt>"
+""" The author(s) of the module """
+
 __version__ = "1.0.0"
 """ The version of the module """
 
@@ -34,38 +37,18 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-from . import account
-from . import address
-from . import bag
-from . import base
-from . import brand
-from . import category
-from . import collection
-from . import color
-from . import country
-from . import order
-from . import product
-from . import referral
-from . import season
-from . import section
-from . import store
-from . import subscription
-from . import voucher
+class StoreAPI(object):
 
-from .account import AccountAPI
-from .address import AddressAPI
-from .bag import BagAPI
-from .base import API
-from .brand import BrandAPI
-from .category import CategoryAPI
-from .collection import CollectionAPI
-from .color import ColorAPI
-from .country import CountryAPI
-from .order import OrderAPI
-from .product import ProductAPI
-from .referral import ReferralAPI
-from .season import SeasonAPI
-from .section import SectionAPI
-from .store import StoreAPI
-from .subscription import SubscriptionAPI
-from .voucher import VoucherAPI
+    def list_stores(self, *args, **kwargs):
+        url = self.base_url + "stores"
+        contents = self.get(
+            url,
+            auth = False,
+            **kwargs
+        )
+        return contents
+
+    def get_store(self, id):
+        url = self.base_url + "stores/%d" % id
+        contents = self.get(url, auth = False)
+        return contents
