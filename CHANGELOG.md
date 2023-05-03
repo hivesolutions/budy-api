@@ -9,16 +9,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+*
+
+### Changed
+
+*
+
+### Fixed
+
+*
+
+## [0.5.0] - 2023-05-03
+
+### Added
+
 * Support for the `Store` API endpoints
 * Support for the `set_store_order` method
 
 ### Changed
 
 * Renamed project using a dash
-
-### Fixed
-
-*
 
 ## [0.4.0] - 2022-11-30
 
