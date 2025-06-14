@@ -1,0 +1,6 @@
+from typing import Any
+
+
+class StoreAPI:
+    def list_stores(self, *args: Any, **kwargs: Any) -> Any: ...
+    def get_store(self, id: int) -> Any: ...
