@@ -9,3 +9,8 @@ class VoucherAPI:
         currency: str | None = None,
         unlimited: bool = False,
     ) -> Any: ...
+    def create_percentage_voucher(
+        self,
+        percentage: float,
+        key: str | None = None,
+    ) -> Any: ...
