@@ -12,6 +12,20 @@
 | **BUDY_USERNAME** | `str` | `None`                       | The username to be used for authentication.                                                                              |
 | **BUDY_PASSWORD** | `str` | `None`                       | The password to be user for authentication.                                                                              |
 
+## Example
+
+```python
+import budy
+
+api = budy.API(
+    username="my_user",
+    password="my_password"
+)
+
+api.login()
+api.create_voucher_value(10)
+```
+
 ## License
 
 Budy API is currently licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/).
