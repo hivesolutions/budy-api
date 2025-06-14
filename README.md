@@ -23,7 +23,7 @@ api = budy.API(
 )
 
 api.login()
-api.create_voucher_value(10)
+api.create_value_voucher(10)
 ```
 
 ## License

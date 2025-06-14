@@ -36,7 +36,7 @@ class VoucherAPI(object):
         contents = self.get(url, **kwargs)
         return contents
 
-    def create_voucher_value(self, amount, key=None, currency=None, unlimited=False):
+    def create_value_voucher(self, amount, key=None, currency=None, unlimited=False):
         url = self.base_url + "vouchers/value"
         contents = self.post(
             url,
