@@ -79,11 +79,13 @@ class API(
         self.currency = appier.conf("BUDY_CURRENCY", "USD")
         self.username = appier.conf("BUDY_USERNAME", None)
         self.password = appier.conf("BUDY_PASSWORD", None)
+        self.secret_key = appier.conf("BUDY_SECRET_KEY", None)
         self.base_url = kwargs.get("base_url", self.base_url)
         self.country = kwargs.get("country", self.country)
         self.currency = kwargs.get("currency", self.currency)
         self.username = kwargs.get("username", self.username)
         self.password = kwargs.get("password", self.password)
+        self.secret_key = kwargs.get("secret_key", self.secret_key)
         self.session_id = kwargs.get("session_id", None)
         self.tokens = kwargs.get("tokens", None)
 
@@ -118,12 +120,18 @@ class API(
         session_id = self.get_session_id()
         params["session_id"] = session_id
 
-    def login(self, username=None, password=None):
+    def login(self, username=None, password=None, secret_key=None):
         username = username or self.username
         password = password or self.password
+        secret_key = secret_key or self.secret_key
         url = self.base_url + "login"
         contents = self.post(
-            url, callback=False, auth=False, username=username, password=password
+            url,
+            callback=False,
+            auth=False,
+            username=username,
+            password=password,
+            secret_key=secret_key,
         )
         self.username = contents.get("username", None)
         self.session_id = contents.get("session_id", None)
