@@ -43,3 +43,11 @@ class VoucherAPI(object):
             data_j=dict(amount=amount, key=key, currency=currency, unlimited=unlimited),
         )
         return contents
+
+    def create_percentage_voucher(self, percentage, key=None):
+        url = self.base_url + "vouchers/percentage"
+        contents = self.post(
+            url,
+            data_j=dict(percentage=percentage, key=key),
+        )
+        return contents
