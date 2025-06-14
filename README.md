@@ -18,6 +18,7 @@
 import budy
 
 api = budy.API(
+    base_url="https://budy.my_instance.com/api/",
     username="my_user",
     password="my_password"
 )
