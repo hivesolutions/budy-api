@@ -37,23 +37,20 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class SectionAPI(object):
 
     def list_sections(self, *args, **kwargs):
         url = self.base_url + "sections"
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents
 
     def get_section(self, id):
         url = self.base_url + "sections/%d" % id
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def slug_section(self, slug):
         url = self.base_url + "sections/slug/%s" % slug
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents

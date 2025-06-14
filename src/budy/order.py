@@ -37,34 +37,32 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class OrderAPI(object):
 
     def list_orders(self, *args, **kwargs):
         url = self.base_url + "orders"
-        contents = self.get(
-            url,
-            **kwargs
-        )
+        contents = self.get(url, **kwargs)
         return contents
 
     def get_order(self, key):
         url = self.base_url + "orders/%s" % key
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def set_store_order(self, key, store_id):
         url = self.base_url + "orders/%s/store" % key
-        contents = self.put(url, data_j = dict(store_id = store_id))
+        contents = self.put(url, data_j=dict(store_id=store_id))
         return contents
 
     def set_shipping_address_order(self, key, payload):
         url = self.base_url + "orders/%s/shipping_address" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def set_billing_address_order(self, key, payload):
         url = self.base_url + "orders/%s/billing_address" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def set_store_shipping_order(self, key):
@@ -79,36 +77,32 @@ class OrderAPI(object):
 
     def set_ip_address_order(self, key, payload):
         url = self.base_url + "orders/%s/ip_address" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def set_email_order(self, key, payload):
         url = self.base_url + "orders/%s/email" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def set_gift_wrap_order(self, key, payload):
         url = self.base_url + "orders/%s/gift_wrap" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def set_referral_order(self, key, payload):
         url = self.base_url + "orders/%s/referral" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def set_voucher_order(self, key, payload):
         url = self.base_url + "orders/%s/voucher" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def set_meta_order(self, key, name, value):
         url = self.base_url + "orders/%s/meta" % key
-        contents = self.put(
-            url,
-            name = name,
-            value = value
-        )
+        contents = self.put(url, name=name, value=value)
         return contents
 
     def set_account_order(self, key):
@@ -118,20 +112,20 @@ class OrderAPI(object):
 
     def wait_payment_order(self, key, payload):
         url = self.base_url + "orders/%s/wait_payment" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def pay_order(self, key, payload):
         url = self.base_url + "orders/%s/pay" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def end_pay_order(self, key, payload):
         url = self.base_url + "orders/%s/end_pay" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def cancel_order(self, key, payload):
         url = self.base_url + "orders/%s/cancel" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents

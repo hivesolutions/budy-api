@@ -39,40 +39,31 @@ __license__ = "Apache License, Version 2.0"
 
 import appier
 
+
 class AccountAPI(object):
 
     def list_accounts(self, *args, **kwargs):
         url = self.base_url + "accounts"
-        contents = self.get(
-            url,
-            **kwargs
-        )
+        contents = self.get(url, **kwargs)
         return contents
 
-    def create_account(self, payload, pre_enabled = False):
+    def create_account(self, payload, pre_enabled=False):
         url = self.base_url + "accounts"
         contents = self.post(
-            url,
-            auth = False,
-            data_j = payload,
-            params = dict(pre_enabled = pre_enabled)
+            url, auth=False, data_j=payload, params=dict(pre_enabled=pre_enabled)
         )
         return contents
 
     def recover_account(self, username):
         username = appier.legacy.quote(username)
         url = self.base_url + "accounts/recover/%s" % username
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def reset_account(self, username, password, token):
         url = self.base_url + "accounts/reset"
         contents = self.post(
-            url,
-            username = username,
-            password = password,
-            token = token,
-            auth = False
+            url, username=username, password=password, token=token, auth=False
         )
         return contents
 
@@ -83,7 +74,7 @@ class AccountAPI(object):
 
     def update_me_account(self, payload):
         url = self.base_url + "accounts/me"
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def avatar_me_account(self):
@@ -103,7 +94,7 @@ class AccountAPI(object):
 
     def create_addresses_me_account(self, payload):
         url = self.base_url + "accounts/me/addresses"
-        contents = self.post(url, data_j = payload)
+        contents = self.post(url, data_j=payload)
         return contents
 
     def delete_address_me_account(self, key):
@@ -113,5 +104,5 @@ class AccountAPI(object):
 
     def confirm_account(self, token):
         url = self.base_url + "accounts/confirm/%s" % token
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents

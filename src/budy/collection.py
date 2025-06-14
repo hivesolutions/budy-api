@@ -37,23 +37,20 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class CollectionAPI(object):
 
     def list_collections(self, *args, **kwargs):
         url = self.base_url + "collections"
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents
 
     def get_collection(self, id):
         url = self.base_url + "collections/%d" % id
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def slug_collection(self, slug):
         url = self.base_url + "collections/slug/%s" % slug
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents

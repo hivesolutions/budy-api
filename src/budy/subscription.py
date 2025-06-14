@@ -37,9 +37,10 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class SubscriptionAPI(object):
 
     def create_subscription(self, payload):
         url = self.base_url + "subscriptions"
-        contents = self.post(url, data_j = payload, auth = False)
+        contents = self.post(url, data_j=payload, auth=False)
         return contents

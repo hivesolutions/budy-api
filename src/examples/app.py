@@ -41,14 +41,11 @@ import appier
 
 from . import base
 
+
 class BudyApp(appier.WebApp):
 
     def __init__(self, *args, **kwargs):
-        appier.WebApp.__init__(
-            self,
-            name = "budy",
-            *args, **kwargs
-        )
+        appier.WebApp.__init__(self, name="budy", *args, **kwargs)
 
     @appier.route("/", "GET")
     def index(self):
@@ -68,6 +65,7 @@ class BudyApp(appier.WebApp):
 
     def get_api(self):
         return base.get_api()
+
 
 if __name__ == "__main__":
     app = BudyApp()

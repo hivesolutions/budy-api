@@ -37,54 +37,35 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class ProductAPI(object):
 
     def list_products(self, *args, **kwargs):
         url = self.base_url + "products"
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents
 
     def get_product(self, id):
         url = self.base_url + "products/%d" % id
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def search_products(self, *args, **kwargs):
         url = self.base_url + "products/search"
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents
 
     def related_product(self, id, *args, **kwargs):
         url = self.base_url + "products/%d/related" % id
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents
 
     def share_product(self, id, *args, **kwargs):
         url = self.base_url + "products/%d/share" % id
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents
 
     def quote_product(self, id, *args, **kwargs):
         url = self.base_url + "products/%d/quote" % id
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents

@@ -37,19 +37,17 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class AddressAPI(object):
 
     def list_addresses(self, *args, **kwargs):
         url = self.base_url + "addresses"
-        contents = self.get(
-            url,
-            **kwargs
-        )
+        contents = self.get(url, **kwargs)
         return contents
 
     def create_address(self, payload):
         url = self.base_url + "addresses"
-        contents = self.post(url, data_j = payload)
+        contents = self.post(url, data_j=payload)
         return contents
 
     def get_address(self, key):
@@ -59,7 +57,7 @@ class AddressAPI(object):
 
     def update_address(self, key, payload):
         url = self.base_url + "addresses/%s" % key
-        contents = self.put(url, data_j = payload)
+        contents = self.put(url, data_j=payload)
         return contents
 
     def delete_address(self, key):

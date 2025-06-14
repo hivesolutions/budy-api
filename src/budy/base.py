@@ -60,6 +60,7 @@ BASE_URL = "http://localhost:8080/api/"
 """ The default base URL to be used when no other
 base URL value is provided to the constructor """
 
+
 class API(
     appier.API,
     bag.BagAPI,
@@ -77,7 +78,7 @@ class API(
     category.CategoryAPI,
     referral.ReferralAPI,
     collection.CollectionAPI,
-    subscription.SubscriptionAPI
+    subscription.SubscriptionAPI,
 ):
 
     def __init__(self, *args, **kwargs):
@@ -99,23 +100,26 @@ class API(
         self,
         method,
         url,
-        data = None,
-        data_j = None,
-        data_m = None,
-        headers = None,
-        params = None,
-        mime = None,
-        kwargs = None
+        data=None,
+        data_j=None,
+        data_m=None,
+        headers=None,
+        params=None,
+        mime=None,
+        kwargs=None,
     ):
         auth = kwargs.pop("auth", True)
         anonymous = kwargs.pop("anonymous", False)
-        if auth: kwargs["session_id"] = self.get_session_id()
-        if not anonymous: kwargs["session_id"] = self.session_id
+        if auth:
+            kwargs["session_id"] = self.get_session_id()
+        if not anonymous:
+            kwargs["session_id"] = self.session_id
         headers["X-Budy-Country"] = kwargs.pop("country", self.country)
         headers["X-Budy-Currency"] = kwargs.pop("currency", self.currency)
 
     def get_session_id(self):
-        if self.session_id: return self.session_id
+        if self.session_id:
+            return self.session_id
         return self.login()
 
     def auth_callback(self, params, headers):
@@ -123,16 +127,12 @@ class API(
         session_id = self.get_session_id()
         params["session_id"] = session_id
 
-    def login(self, username = None, password = None):
+    def login(self, username=None, password=None):
         username = username or self.username
         password = password or self.password
         url = self.base_url + "login"
         contents = self.post(
-            url,
-            callback = False,
-            auth = False,
-            username = username,
-            password = password
+            url, callback=False, auth=False, username=username, password=password
         )
         self.username = contents.get("username", None)
         self.session_id = contents.get("session_id", None)
@@ -141,6 +141,8 @@ class API(
         return self.session_id
 
     def is_auth(self):
-        if not self.username: return False
-        if not self.password: return False
+        if not self.username:
+            return False
+        if not self.password:
+            return False
         return True

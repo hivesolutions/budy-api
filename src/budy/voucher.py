@@ -37,12 +37,18 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class VoucherAPI(object):
 
     def list_vouchers(self, *args, **kwargs):
         url = self.base_url + "vouchers"
-        contents = self.get(
+        contents = self.get(url, **kwargs)
+        return contents
+
+    def create_voucher_value(self, amount, key=None, currency=None, unlimited=False):
+        url = self.base_url + "vouchers/value"
+        contents = self.post(
             url,
-            **kwargs
+            data_j=dict(amount=amount, key=key, currency=currency, unlimited=unlimited),
         )
         return contents

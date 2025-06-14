@@ -37,23 +37,20 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class CategoryAPI(object):
 
     def list_categories(self, *args, **kwargs):
         url = self.base_url + "categories"
-        contents = self.get(
-            url,
-            auth = False,
-            **kwargs
-        )
+        contents = self.get(url, auth=False, **kwargs)
         return contents
 
     def get_category(self, id):
         url = self.base_url + "categories/%d" % id
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def slug_category(self, slug):
         url = self.base_url + "categories/slug/%s" % slug
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents

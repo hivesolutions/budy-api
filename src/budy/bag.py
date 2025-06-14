@@ -37,57 +37,55 @@ __copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class BagAPI(object):
 
     def list_bags(self, *args, **kwargs):
         url = self.base_url + "bags"
-        contents = self.get(
-            url,
-            **kwargs
-        )
+        contents = self.get(url, **kwargs)
         return contents
 
     def create_bag(self, payload):
         url = self.base_url + "bags"
-        contents = self.post(url, data_j = payload, auth = False)
+        contents = self.post(url, data_j=payload, auth=False)
         return contents
 
     def key_bag(self):
         url = self.base_url + "bags/key"
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def get_bag(self, key):
         url = self.base_url + "bags/%s" % key
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def merge_bag(self, key, target):
         url = self.base_url + "bags/%s/merge/%s" % (key, target)
-        contents = self.put(url, auth = False)
+        contents = self.put(url, auth=False)
         return contents
 
     def add_line_bag(self, key, payload):
         url = self.base_url + "bags/%s/lines" % key
-        contents = self.post(url, data_j = payload, auth = False)
+        contents = self.post(url, data_j=payload, auth=False)
         return contents
 
     def remove_line_bag(self, key, line_id):
         url = self.base_url + "bags/%s/lines/%d" % (key, line_id)
-        contents = self.delete(url, auth = False)
+        contents = self.delete(url, auth=False)
         return contents
 
     def add_update_line_bag(self, key, payload):
         url = self.base_url + "bags/%s/lines/add_update" % key
-        contents = self.post(url, data_j = payload, auth = False)
+        contents = self.post(url, data_j=payload, auth=False)
         return contents
 
     def empty_bag(self, key):
         url = self.base_url + "bags/%s/empty" % key
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
 
     def order_bag(self, key):
         url = self.base_url + "bags/%s/order" % key
-        contents = self.get(url, auth = False)
+        contents = self.get(url, auth=False)
         return contents
