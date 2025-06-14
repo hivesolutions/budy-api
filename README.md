@@ -21,9 +21,8 @@ api = budy.API(
     username="my_user",
     password="my_password"
 )
-
-api.login()
-api.create_value_voucher(10)
+voucher = api.create_value_voucher(10)
+print(voucher["key"])
 ```
 
 ## License
