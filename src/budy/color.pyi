@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class ColorAPI:
     def list_colors(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_color(self, id: int) -> Any: ...

@@ -1,6 +1,5 @@
 from typing import Any, Dict
 
-
 class BagAPI:
     def list_bags(self, *args: Any, **kwargs: Any) -> Any: ...
     def create_bag(self, payload: Dict[str, Any]) -> Any: ...

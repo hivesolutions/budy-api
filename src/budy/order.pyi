@@ -1,6 +1,5 @@
 from typing import Any, Dict
 
-
 class OrderAPI:
     def list_orders(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_order(self, key: str) -> Any: ...

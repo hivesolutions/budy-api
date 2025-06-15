@@ -20,7 +20,25 @@ from . import voucher as voucher
 
 BASE_URL: str
 
-class API(appier.API, bag.BagAPI, color.ColorAPI, order.OrderAPI, brand.BrandAPI, store.StoreAPI, season.SeasonAPI, account.AccountAPI, address.AddressAPI, country.CountryAPI, product.ProductAPI, section.SectionAPI, voucher.VoucherAPI, category.CategoryAPI, referral.ReferralAPI, collection.CollectionAPI, subscription.SubscriptionAPI):
+class API(
+    appier.API,
+    bag.BagAPI,
+    color.ColorAPI,
+    order.OrderAPI,
+    brand.BrandAPI,
+    store.StoreAPI,
+    season.SeasonAPI,
+    account.AccountAPI,
+    address.AddressAPI,
+    country.CountryAPI,
+    product.ProductAPI,
+    section.SectionAPI,
+    voucher.VoucherAPI,
+    category.CategoryAPI,
+    referral.ReferralAPI,
+    collection.CollectionAPI,
+    subscription.SubscriptionAPI,
+):
     base_url: str
     country: str
     currency: str
@@ -42,6 +60,10 @@ class API(appier.API, bag.BagAPI, color.ColorAPI, order.OrderAPI, brand.BrandAPI
         kwargs: Dict[str, Any] | None = None,
     ) -> None: ...
     def get_session_id(self) -> str | None: ...
-    def auth_callback(self, params: Dict[str, Any], headers: Dict[str, Any]) -> None: ...
-    def login(self, username: str | None = None, password: str | None = None) -> str | None: ...
+    def auth_callback(
+        self, params: Dict[str, Any], headers: Dict[str, Any]
+    ) -> None: ...
+    def login(
+        self, username: str | None = None, password: str | None = None
+    ) -> str | None: ...
     def is_auth(self) -> bool: ...

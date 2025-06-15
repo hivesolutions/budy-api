@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class CategoryAPI:
     def list_categories(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_category(self, id: int) -> Any: ...

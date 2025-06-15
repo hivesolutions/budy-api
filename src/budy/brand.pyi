@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class BrandAPI:
     def list_brands(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_brand(self, id: int) -> Any: ...

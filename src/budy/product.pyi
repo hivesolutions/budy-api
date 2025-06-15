@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class ProductAPI:
     def list_products(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_product(self, id: int) -> Any: ...
