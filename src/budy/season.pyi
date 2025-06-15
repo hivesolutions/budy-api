@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class SeasonAPI:
     def list_seasons(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_season(self, id: int) -> Any: ...

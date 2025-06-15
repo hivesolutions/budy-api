@@ -1,6 +1,5 @@
 from typing import Any, Dict
 
-
 class AddressAPI:
     def list_addresses(self, *args: Any, **kwargs: Any) -> Any: ...
     def create_address(self, payload: Dict[str, Any]) -> Any: ...

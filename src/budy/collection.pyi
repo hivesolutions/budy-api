@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class CollectionAPI:
     def list_collections(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_collection(self, id: int) -> Any: ...

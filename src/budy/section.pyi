@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class SectionAPI:
     def list_sections(self, *args: Any, **kwargs: Any) -> Any: ...
     def get_section(self, id: int) -> Any: ...
