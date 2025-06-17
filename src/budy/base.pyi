@@ -21,6 +21,9 @@ from . import voucher as voucher
 
 BASE_URL: str
 
+class Base(TypedDict):
+    pass
+
 class API(
     AppierAPI,
     bag.BagAPI,

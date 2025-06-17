@@ -1,6 +1,8 @@
 from typing import Any, Sequence
 
-class Voucher:
+from .base import Base
+
+class Voucher(Base):
     key: str
     amount: float
     currency: str

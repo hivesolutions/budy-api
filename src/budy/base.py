@@ -145,3 +145,7 @@ class API(
         if not self.password:
             return False
         return True
+
+
+class Base(dict):
+    pass
