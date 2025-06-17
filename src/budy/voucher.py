@@ -35,19 +35,64 @@ class VoucherAPI(object):
         url = self.base_url + "vouchers"
         contents = self.get(url, **kwargs)
         return contents
+    
+    def get_voucher(self, key):
+        url = self.base_url + "vouchers/" + key
+        contents = self.get(url)
+        return contents
 
-    def create_value_voucher(self, amount, key=None, currency=None, unlimited=False):
+    def create_value_voucher(
+        self,
+        amount,
+        key=None,
+        currency=None,
+        usage_limit=0,
+        unlimited=False,
+        start=None,
+        expiration=None,
+        meta=None,
+    ):
         url = self.base_url + "vouchers/value"
+        data_j = dict(
+            amount=amount,
+            key=key,
+            currency=currency,
+            usage_limit=usage_limit,
+            unlimited=unlimited,
+            start=start,
+            expiration=expiration,
+        )
+        if not meta == None:
+            data_j["meta"] = meta
         contents = self.post(
             url,
-            data_j=dict(amount=amount, key=key, currency=currency, unlimited=unlimited),
+            data_j=data_j,
         )
         return contents
 
-    def create_percentage_voucher(self, percentage, key=None):
+    def create_percentage_voucher(
+        self,
+        percentage,
+        key=None,
+        usage_limit=0,
+        unlimited=False,
+        start=None,
+        expiration=None,
+        meta=None,
+    ):
         url = self.base_url + "vouchers/percentage"
+        data_j = dict(
+            percentage=percentage,
+            key=key,
+            usage_limit=usage_limit,
+            unlimited=unlimited,
+            start=start,
+            expiration=expiration,
+        )
+        if not meta == None:
+            data_j["meta"] = meta
         contents = self.post(
             url,
-            data_j=dict(percentage=percentage, key=key),
+            data_j=data_j,
         )
         return contents
