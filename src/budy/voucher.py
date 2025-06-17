@@ -35,7 +35,7 @@ class VoucherAPI(object):
         url = self.base_url + "vouchers"
         contents = self.get(url, **kwargs)
         return contents
-    
+
     def get_voucher(self, key):
         url = self.base_url + "vouchers/" + key
         contents = self.get(url)
@@ -95,4 +95,22 @@ class VoucherAPI(object):
             url,
             data_j=data_j,
         )
+        return contents
+
+    def use_voucher(
+        self, key, amount=None, currency=None, justification=None, save_use=True
+    ):
+        url = self.base_url + "vouchers/" + key + "/use"
+        data_j = dict(
+            amount=amount,
+            currency=currency,
+            justification=justification,
+            save_use=save_use,
+        )
+        contents = self.post(url, data_j=data_j)
+        return contents
+
+    def disuse_voucher(self, key):
+        url = self.base_url + "vouchers/" + key + "/disuse"
+        contents = self.post(url)
         return contents
