@@ -1,6 +1,7 @@
 from typing import Any, Dict
 
-import appier
+from appier import API as AppierAPI
+
 from . import account as account
 from . import address as address
 from . import bag as bag
@@ -21,7 +22,7 @@ from . import voucher as voucher
 BASE_URL: str
 
 class API(
-    appier.API,
+    AppierAPI,
     bag.BagAPI,
     color.ColorAPI,
     order.OrderAPI,
