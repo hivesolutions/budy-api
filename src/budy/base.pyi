@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, TypedDict
 
 from appier import API as AppierAPI
 
