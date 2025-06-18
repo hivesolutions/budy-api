@@ -42,6 +42,6 @@ class VoucherAPI:
         amount: float | None = None,
         currency: str | None = None,
         justification: str | None = None,
-        save_use: bool = True,
+        save_usage: bool = True,
     ) -> Voucher: ...
     def disuse_voucher(self, key: str) -> Voucher: ...
