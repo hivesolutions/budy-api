@@ -58,3 +58,27 @@ class OrderAPITest(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertEqual(calls[1][0], "http://localhost/api/orders/other/gift_slip")
         self.assertEqual(calls[1][1], dict(data_j=dict(gift_slip=False)))
+
+    def test_set_notes_order(self):
+        calls = []
+
+        def put(url, **kwargs):
+            calls.append((url, kwargs))
+            return dict(notes=kwargs["data_j"]["notes"])
+
+        api = budy.API(base_url="http://localhost/api/")
+        api.put = put
+
+        result = api.set_notes_order("key", dict(notes="Wrap separately"))
+
+        self.assertEqual(result, dict(notes="Wrap separately"))
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(calls[0][0], "http://localhost/api/orders/key/notes")
+        self.assertEqual(calls[0][1], dict(data_j=dict(notes="Wrap separately")))
+
+        result = api.set_notes_order("other", dict(notes=""))
+
+        self.assertEqual(result, dict(notes=""))
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[1][0], "http://localhost/api/orders/other/notes")
+        self.assertEqual(calls[1][1], dict(data_j=dict(notes="")))
