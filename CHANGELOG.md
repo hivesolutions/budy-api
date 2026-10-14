@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-* Support for setting the notes of an order - [#193](https://github.com/hivesolutions/ustore-neo/issues/193)
+*
 
 ### Changed
 
@@ -18,6 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 *
+
+## [0.7.0] - 2026-10-14
+
+### Added
+
+* Support for setting the notes of an order - [#193](https://github.com/hivesolutions/ustore-neo/issues/193)
 
 ## [0.6.0] - 2026-10-14
 
