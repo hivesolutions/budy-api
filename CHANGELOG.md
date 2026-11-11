@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 * Titles in the steps of the CI workflows
+* Python release candidate dropped from the CI, as its image is frozen at 3.10.0rc2
 
 ### Fixed
 
