@@ -35,6 +35,7 @@ from . import color
 from . import order
 from . import brand
 from . import store
+from . import visit
 from . import season
 from . import account
 from . import address
@@ -59,6 +60,7 @@ class API(
     order.OrderAPI,
     brand.BrandAPI,
     store.StoreAPI,
+    visit.VisitAPI,
     season.SeasonAPI,
     account.AccountAPI,
     address.AddressAPI,

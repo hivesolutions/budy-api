@@ -56,6 +56,11 @@ class BagAPI(object):
         contents = self.put(url, auth=False)
         return contents
 
+    def set_source_bag(self, key, payload):
+        url = self.base_url + "bags/%s/source" % key
+        contents = self.put(url, data_j=payload, auth=False)
+        return contents
+
     def add_line_bag(self, key, payload):
         url = self.base_url + "bags/%s/lines" % key
         contents = self.post(url, data_j=payload, auth=False)
