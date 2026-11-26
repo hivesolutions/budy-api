@@ -35,6 +35,33 @@ import budy
 
 class OrderAPITest(unittest.TestCase):
 
+    def test_set_source_order(self):
+        calls = []
+
+        def put(url, **kwargs):
+            calls.append((url, kwargs))
+            return dict(source=kwargs["data_j"]["source"])
+
+        api = budy.API(base_url="http://localhost/api/")
+        api.put = put
+
+        source = dict(
+            channel="paid_social", source="facebook", campaign="6777381566382"
+        )
+        result = api.set_source_order("key", dict(source=source))
+
+        self.assertEqual(result, dict(source=source))
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(calls[0][0], "http://localhost/api/orders/key/source")
+        self.assertEqual(calls[0][1], dict(data_j=dict(source=source)))
+
+        result = api.set_source_order("other", dict(source=None))
+
+        self.assertEqual(result, dict(source=None))
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[1][0], "http://localhost/api/orders/other/source")
+        self.assertEqual(calls[1][1], dict(data_j=dict(source=None)))
+
     def test_set_gift_slip_order(self):
         calls = []
 

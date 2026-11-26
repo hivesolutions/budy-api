@@ -41,6 +41,7 @@ from . import season
 from . import section
 from . import store
 from . import subscription
+from . import visit
 from . import voucher
 
 from .account import AccountAPI
@@ -59,4 +60,5 @@ from .season import SeasonAPI
 from .section import SectionAPI
 from .store import StoreAPI
 from .subscription import SubscriptionAPI
+from .visit import VisitAPI
 from .voucher import VoucherAPI

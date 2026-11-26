@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-*
+* Calls to set the marketing source of orders and bags, and to send the storefront visits - [#18](https://github.com/hivesolutions/budy-api/issues/18)
 
 ### Changed
 

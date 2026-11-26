@@ -71,6 +71,11 @@ class OrderAPI(object):
         contents = self.put(url, data_j=payload)
         return contents
 
+    def set_source_order(self, key, payload):
+        url = self.base_url + "orders/%s/source" % key
+        contents = self.put(url, data_j=payload)
+        return contents
+
     def set_email_order(self, key, payload):
         url = self.base_url + "orders/%s/email" % key
         contents = self.put(url, data_j=payload)
